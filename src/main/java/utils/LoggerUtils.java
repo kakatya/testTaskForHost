@@ -7,13 +7,13 @@ public class LoggerUtils {
     private static Logger logger;
 
     public static void logInfo(String name, String message) {
-        logger = LogManager.getLogger(name);
-        logger.info(message);
+        logger = LogManager.getLogger();
+        logger.info(name, message);
     }
 
     public static void logFatal(String name, String message) {
-        logger = LogManager.getLogger(name);
-        logger.fatal(message);
+        logger = LogManager.getLogger();
+        logger.fatal(name, message);
     }
 
     public static void logError(String name, String message) {

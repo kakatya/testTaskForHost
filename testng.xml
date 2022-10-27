@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All test suit">
-    <test  name="TestM">
+
+    <test  name="W:\testTaskForHost">
+        <classes>
+            <class name="TestM">
+
+            </class>
+        </classes>
     </test>
 </suite>

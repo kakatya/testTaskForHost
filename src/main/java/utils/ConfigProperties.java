@@ -13,4 +13,15 @@ public interface ConfigProperties extends Config {
     @Key("base_url")
     String baseUrl();
 
+    @Key("wait")
+    String waits();
+
+    @Key("login")
+    String login();
+
+    @Key("password")
+    String password();
+    @Key("expected_service")
+    String expected_service();
+
 }

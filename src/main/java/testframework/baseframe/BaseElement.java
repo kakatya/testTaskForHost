@@ -1,10 +1,12 @@
 package testframework.baseframe;
 
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import testframework.browserfactory.basebrowser.Browser;
+import utils.ConfigProperties;
 import utils.JsUtils;
 
 import java.time.Duration;
@@ -13,6 +15,7 @@ import java.util.List;
 public abstract class BaseElement {
     private By locator;
     private String name;
+    private static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
     public BaseElement(By locator, String name) {
         this.locator = locator;
@@ -41,7 +44,7 @@ public abstract class BaseElement {
 
     public void waitForVisible() {
         new WebDriverWait(Browser.getBrowser().getDriver(),
-                Duration.ofSeconds(new Long(10)))
+                Duration.ofSeconds(Long.parseLong(configProperties.waits())))
                 .until(ExpectedConditions
                         .presenceOfElementLocated(locator));
     }
