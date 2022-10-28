@@ -21,12 +21,12 @@ import java.util.List;
 @Listeners({TestListenerAdapter.class})
 @Epic("Regression Tests")
 @Feature("Personal area test")
-public class TestM extends BaseTest {
+public class IndicatorHealthTest extends BaseTest {
     ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
-    @Step("Check login page")
+    @Step("Check indicator health page")
     @Test
-    public void myTest() {
+    public void indicatorHealthTest() {
         LoginPage loginPage = new LoginPage();
         MainPage mainPage = new MainPage();
         MainPageForAuthorUser mainPageForAuthorUser = new MainPageForAuthorUser();
