@@ -3,6 +3,7 @@ package frame;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import testframework.baseframe.BaseForm;
+import utils.LoggerUtils;
 
 public class MainPageForAuthorUser extends BaseForm {
     private Button userButton = new Button(By.xpath("//app-login-menu"),
@@ -17,6 +18,7 @@ public class MainPageForAuthorUser extends BaseForm {
 
     @Step("Open personal area")
     public void openPersonalArea() {
+        LoggerUtils.logInfo(MainPageForAuthorUser.class.getName(),"Go to personal area");
         userButton.waitForVisible();
         userButton.simpleClick();
         personalAreaBt.waitForVisible();

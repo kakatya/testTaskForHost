@@ -1,7 +1,7 @@
 import frame.LoginPage;
 import frame.MainPage;
 import frame.MainPageForAuthorUser;
-import frame.PersonalArea;
+import frame.PersonalAreaPage;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
@@ -30,7 +30,7 @@ public class TestM extends BaseTest {
         LoginPage loginPage = new LoginPage();
         MainPage mainPage = new MainPage();
         MainPageForAuthorUser mainPageForAuthorUser = new MainPageForAuthorUser();
-        PersonalArea personalArea = new PersonalArea();
+        PersonalAreaPage personalAreaPage = new PersonalAreaPage();
         Browser.getBrowser().getDriver().navigate().to(configProperties.baseUrl());
         Assert.assertTrue(mainPage.isDisplayed(), "Main page is not displayed");
         mainPage.clickOnLoginButton();
@@ -41,16 +41,16 @@ public class TestM extends BaseTest {
         mainPageForAuthorUser.waitForOpen();
         mainPageForAuthorUser.openPersonalArea();
         mainPageForAuthorUser.waitForOpen();
-        personalArea.waitForOpen();
-        personalArea.openOtherPartition();
-        personalArea.openIndicatorsHealth();
-        personalArea.scrollPage();
-        personalArea.clickOnAddIndicator();
-        personalArea.scrollPage();
-        personalArea.inputIndicator(configProperties.indicator());
-        personalArea.pressEnter();
+        personalAreaPage.waitForOpen();
+        personalAreaPage.openOtherPartition();
+        personalAreaPage.openIndicatorsHealth();
+        personalAreaPage.scrollPage();
+        personalAreaPage.clickOnAddIndicator();
+        personalAreaPage.scrollPage();
+        personalAreaPage.inputIndicator(configProperties.indicator());
+        personalAreaPage.pressEnter();
 
-        Assert.assertEquals(personalArea.getIndVal(), configProperties.indicator()
+        Assert.assertEquals(personalAreaPage.getIndVal(), configProperties.indicator()
                 , "Indicator value is not correct");
         List<String> strings = ApiApplicationRequest.getServicesName("https://pp86.hostco.ru/"
                 , "api/pp/rest/services", 200, ContentType.JSON);

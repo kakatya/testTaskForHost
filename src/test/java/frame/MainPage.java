@@ -3,6 +3,7 @@ package frame;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import testframework.baseframe.BaseForm;
+import utils.LoggerUtils;
 
 
 public class MainPage extends BaseForm {
@@ -18,6 +19,7 @@ public class MainPage extends BaseForm {
 
     @Step("Go to login page")
     public void clickOnLoginButton() {
+        LoggerUtils.logInfo(MainPage.class.getName(),"Go to login page");
         personalAreaButton.waitForVisible();
         personalAreaButton.click();
     }
