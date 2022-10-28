@@ -35,7 +35,7 @@ public class Browser {
                 }
             }
         } catch (IllegalArgumentException ex) {
-            LoggerUtils.logError(Browser.class.getName(), "Browser is not exist.");
+            LoggerUtils.logError(Browser.class.getName(), ex.getMessage());
         }
         return browser;
     }

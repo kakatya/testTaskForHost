@@ -8,4 +8,8 @@ public class TextLabel extends BaseElement {
     public TextLabel(By locator, String name) {
         super(locator, name);
     }
+
+    public String getText() {
+        return findElement().getText();
+    }
 }

@@ -23,5 +23,8 @@ public interface ConfigProperties extends Config {
     String password();
     @Key("expected_service")
     String expected_service();
+    @Key("indicator")
+    String indicator();
+
 
 }

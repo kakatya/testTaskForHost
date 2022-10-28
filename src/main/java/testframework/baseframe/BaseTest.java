@@ -8,6 +8,7 @@ public abstract class BaseTest {
     @BeforeTest
     public void setUpUrl() {
         Browser.getBrowser().getDriver();
+        Browser.getBrowser().getDriver().manage().window().maximize();
     }
 
     @AfterTest

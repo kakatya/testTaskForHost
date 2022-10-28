@@ -10,4 +10,14 @@ public class JsUtils {
         ((JavascriptExecutor) Browser.getBrowser().getDriver())
                 .executeScript("arguments[0].click();", webElement);
     }
+    public static void pageDown(int scrollTo) {
+        try {
+            ((JavascriptExecutor) Browser.getBrowser().getDriver())
+                    .executeScript("window.scrollTo(0," + scrollTo + ")");
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            LoggerUtils.logFatal(JsUtils.class.getName(), e.getMessage());
+        }
+    }
+
 }
